@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+    <style>
+        body {
+            background-color: #fff;
+            font-family: "Open Sans", sans-serif;
+            line-height: 1.2;
+            color: black;
+            margin: 0;
+            padding: 0;
+            background-image: url(./blue.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right;
+
+        }
+
+        /* reset */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+            margin: 0;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 0;
+            list-style-type: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .wrapper {
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+        }
+
+        .top-part {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #5585C1;
+        }
+
+        .info-part {
+            padding: 30px;
+        }
+
+        .main-title {
+            font-size: 28px;
+            font-weight: 500;
+            color: #ffffff;
+        }
+
+        .main-subtitle {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2E363E;
+            margin-bottom: 16px;
+        }
+
+        .text {
+            font-weight: 500;
+            color: #ffffff;
+        }
+
+        .my-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 30px;
+            border: 4px solid #2E363E;
+        }
+
+        .contacts {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            background-color: #3E6FA6;
+            padding: 10px;
+        }
+
+        .contacts-item {
+            display: flex;
+            text-align: start;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contacts-icon {
+            fill: #fff;
+        }
+
+        .contacts-link {
+            color: #ffffff;
+            font-weight: 400;
+            font-size: 14px;
+        }
+
+        .bottom-part {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .main-part {
+            max-width: 60%;
+            padding: 30px;
+        }
+
+        .expirience {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            display: inline-block;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #2E363E;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #2E363E;
+        }
+
+        .section-subtitle {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .section-text {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .section-place {
+            font-style: italic;
+            color: #2E363E;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .section-city {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .expirience-task-list {
+            padding-left: 15px;
+        }
+
+        .expirience-task-item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .expirience-task-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .expirience-task-item::before {
+            position: absolute;
+            top: 5px;
+            left: -15px;
+            border: 1px solid #2E363E;
+            background-color: #2E363E;
+            border-radius: 100%;
+            width: 5px;
+            height: 5px;
+            content: '';
+        }
+
+        .educational-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .education-duties {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 15px;
+            gap: 4px 18px;
+        }
+
+        .education-duties-item {
+            position: relative;
+            width: calc((100% - 18px) / 2);
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .education-duties-item::before {
+            position: absolute;
+            top: 5px;
+            left: -15px;
+            border: 1px solid #2E363E;
+            background-color: #2E363E;
+            border-radius: 100%;
+            width: 5px;
+            height: 5px;
+            content: '';
+        }
+
+        .sidebar {
+            padding: 30px;
+            width: 40%;
+            max-height: 100%;
+        }
+
+        .side-languages {
+            margin-bottom: 30px;
+        }
+
+        .side-languages-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .side-languages-name {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .side-languages-level {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .languages-one {
+            background-color: #5585C1;
+            border-radius: 100%;
+            width: 15px;
+            height: 15px;
+        }
+
+        .languages-zero {
+            background-color: #2E363E;
+            border-radius: 100%;
+            width: 9px;
+            height: 9px;
+        }
+
+        .side-hard-skills {
+            margin-bottom: 30px;
+        }
+
+        .side-skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 8px;
+        }
+
+        .side-hard-skills-item {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 500;
+            background-color: #5585C1;
+            border-radius: 3px;
+            padding: 4px 8px;
+        }
+
+        .side-soft-skills-item {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 500;
+            background-color: #97B6DA;
+            border-radius: 3px;
+            padding: 4px 8px;
+        }
+
+        /* print */
+
+        @media print {
+            .expirience-task-item::before {
+                width: 4px;
+                height: 4px;
+            }
+
+            .education-duties-item::before {
+                width: 4px;
+                height: 4px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- top part -->
+        <div class="top-part">
+            <!-- main info  -->
+            <div class="main-info">
+                <div class="info-part">
+                    <h1 class="main-title">Test User</h1>
+                    <h3 class="main-subtitle">Lorem ipsum dolor sit</h3>
+                    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos labore
+                        dicta
+                        at
+                        dolore!</p>
+                </div>
+                <!-- my photo -->
+                <img src="./photo.jpg" alt="My photo" class="my-photo" />
+            </div>
+            <!-- contacts -->
+            <ul class="contacts">
+                <li class="contacts-item">
+                    <svg class="contacts-icon" width="20" height="20" viewBox="0 0 32 32">
+                        <path
+                            d="M29 4H3a3 3 0 0 0-3 3v18a3 3 0 0 0 3 3h26a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zM2.741 25.99l-.731-.732 8.249-8.248.731.732-8.249 8.248zm26.518 0-8.249-8.248.731-.732 8.249 8.248-.731.732zM17 19.325V20h-2v-.675L2.003 7.275l1.272-1.272L16 17.801 28.725 6.003l1.272 1.272L17 19.325z" />
+                    </svg>
+                    <a href="mailto:" class="contacts-link">test.user@gmail.com</a>
+                </li>
+                <li class="contacts-item">
+                    <svg class="contacts-icon" width="18" height="18" viewBox="0 0 20 32">
+                        <path
+                            d="M0 2.909A2.908 2.908 0 0 1 2.909 0h14.545a2.908 2.908 0 0 1 2.909 2.909v26.182A2.908 2.908 0 0 1 17.454 32H2.909A2.908 2.908 0 0 1 0 29.091V2.909zm5.818.727c0-.402.326-.727.727-.727h7.273a.727.727 0 0 1 0 1.454H6.545a.727.727 0 0 1-.727-.727zm4.364 25.455a1.455 1.455 0 1 0 0-2.91 1.455 1.455 0 0 0 0 2.91z" />
+                    </svg>
+                    <a href="tel:" class="contacts-link">+491721831273</a>
+                </li>
+                <li class="contacts-item">
+                    <svg class="contacts-icon" width="18" height="18" viewBox="0 0 32 32">
+                        <path
+                            d="M16 0C10.477 0 6 4.477 6 10c0 10 10 22 10 22s10-12 10-22c0-5.523-4.477-10-10-10zm0 16.125a6.125 6.125 0 1 1 0-12.25 6.125 6.125 0 0 1 0 12.25zM12.125 10a3.875 3.875 0 1 1 7.75 0 3.875 3.875 0 0 1-7.75 0z" />
+                    </svg>
+                    <p class="contacts-link">Essen, Germany</p>
+                </li>
+                <li class="contacts-item">
+                    <svg class="contacts-icon" width="18" height="18" viewBox="0 0 32 32">
+                        <path
+                            d="M16 2.881c4.275 0 4.781.019 6.462.094 1.563.069 2.406.331 2.969.55a4.952 4.952 0 0 1 1.837 1.194 5.015 5.015 0 0 1 1.2 1.838c.219.563.481 1.412.55 2.969.075 1.688.094 2.194.094 6.463s-.019 4.781-.094 6.463c-.069 1.563-.331 2.406-.55 2.969a4.94 4.94 0 0 1-1.194 1.837 5.02 5.02 0 0 1-1.837 1.2c-.563.219-1.413.481-2.969.55-1.688.075-2.194.094-6.463.094s-4.781-.019-6.463-.094c-1.563-.069-2.406-.331-2.969-.55a4.952 4.952 0 0 1-1.838-1.194 5.02 5.02 0 0 1-1.2-1.837c-.219-.563-.481-1.413-.55-2.969-.075-1.688-.094-2.194-.094-6.463s.019-4.781.094-6.463c.069-1.563.331-2.406.55-2.969a4.964 4.964 0 0 1 1.194-1.838 5.015 5.015 0 0 1 1.838-1.2c.563-.219 1.412-.481 2.969-.55 1.681-.075 2.188-.094 6.463-.094zM16 0c-4.344 0-4.887.019-6.594.094-1.7.075-2.869.35-3.881.744-1.056.412-1.95.956-2.837 1.85a7.833 7.833 0 0 0-1.85 2.831C.444 6.538.169 7.7.094 9.4.019 11.113 0 11.656 0 16s.019 4.887.094 6.594c.075 1.7.35 2.869.744 3.881.413 1.056.956 1.95 1.85 2.837a7.82 7.82 0 0 0 2.831 1.844c1.019.394 2.181.669 3.881.744 1.706.075 2.25.094 6.594.094s4.888-.019 6.594-.094c1.7-.075 2.869-.35 3.881-.744 1.05-.406 1.944-.956 2.831-1.844s1.438-1.781 1.844-2.831c.394-1.019.669-2.181.744-3.881.075-1.706.094-2.25.094-6.594s-.019-4.887-.094-6.594c-.075-1.7-.35-2.869-.744-3.881a7.506 7.506 0 0 0-1.831-2.844A7.82 7.82 0 0 0 26.482.843C25.463.449 24.301.174 22.601.099c-1.712-.081-2.256-.1-6.6-.1z" />
+                        <path
+                            d="M16 7.781c-4.537 0-8.219 3.681-8.219 8.219s3.681 8.219 8.219 8.219 8.219-3.681 8.219-8.219A8.221 8.221 0 0 0 16 7.781zm0 13.55a5.331 5.331 0 1 1 0-10.663 5.331 5.331 0 0 1 0 10.663zM26.462 7.456a1.919 1.919 0 1 1-3.838 0 1.919 1.919 0 0 1 3.838 0z" />
+                    </svg>
+                    <a href="https://www.instagram.com/" class="contacts-link">instagram.com/test_user</a>
+                </li>
+            </ul>
+        </div>
+        <!-- bottom part -->
+        <div class="bottom-part">
+            <div class="main-part">
+                <!-- expirience -->
+                <div class="expirience">
+                    <h2 class="section-title">Work expirience</h2>
+                    <ul class="expirience-list">
+                        <li class="expirience-item">
+                            <h3 class="section-subtitle">Lorem, ipsum dolor</h3>
+                            <p class="section-text">Lorem ipsum dolor sit amet</p>
+                            <p class="section-place">Lorem</p>
+                            <p class="section-place task">Lorem</p>
+                            <ul class="expirience-task-list">
+                                <li class="expirience-task-item">Lorem ipsum dolor sit, amet consectetur adipisicing
+                                    elit.
+                                    Excepturi, consequatur error?
+                                    Suscipit, explicabo! Eveniet nam quibusdam voluptates magni inventore nulla omnis,
+                                    recusandae dolores necessitatibus enim.
+                                </li>
+                                <li class="expirience-task-item">Lorem ipsum dolor sit, amet consectetur adipisicing
+                                    elit.
+                                    Excepturi, consequatur error?
+                                    Suscipit, explicabo! Eveniet nam quibusdam voluptates magni inventore nulla omnis,
+                                    recusandae dolores necessitatibus enim.
+
+                                </li>
+                                <li class="expirience-task-item">Lorem ipsum dolor sit, amet consectetur adipisicing
+                                    elit.
+                                    Excepturi, consequatur error?
+                                    Suscipit, explicabo! Eveniet nam quibusdam voluptates magni inventore nulla omnis,
+                                    recusandae dolores necessitatibus enim.
+
+                                </li>
+                                <li class="expirience-task-item">Lorem ipsum dolor sit, amet consectetur adipisicing
+                                    elit.
+                                    Excepturi, consequatur error?
+                                    Suscipit, explicabo! Eveniet nam quibusdam voluptates magni inventore nulla omnis,
+                                    recusandae dolores necessitatibus enim.
+
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- education -->
+                <div class="education">
+                    <h2 class="section-title">Education</h2>
+                    <ul class="educational-list">
+                        <li class="educational-item">
+                            <h3 class="section-subtitle">Lorem, ipsum dolor</h3>
+                            <p class="section-text">Lorem ipsum dolor sit amet</p>
+                            <p class="section-place">Lorem</p>
+                            <ul class="education-duties">
+                                <li class="education-duties-item">Lorem ipsum dolor sit amet</li>
+                                <li class="education-duties-item">Lorem ipsum dolor sit amet</li>
+                                <li class="education-duties-item">Lorem ipsum dolor sit amet</li>
+                                <li class="education-duties-item">Lorem ipsum dolor sit amet</li>
+                            </ul>
+                        </li>
+                        <li class="educational-item">
+                            <h3 class="section-subtitle">Lorem, ipsum dolor</h3>
+                            <p class="section-text">Lorem ipsum dolor sit amet</p>
+                            <p class="section-place">Lorem</p>
+                            <p class="section-place">Lorem</p>
+                            <ul class="education-duties">
+                                <li class="education-duties-item">Lorem ipsum dolor sit amet</li>
+                                <li class="education-duties-item">Lorem ipsum dolor sit amet</li>
+                                <li class="education-duties-item">Lorem ipsum dolor sit amet</li>
+                            </ul>
+                        </li>
+                        <li class="educational-item">
+                            <h3 class="section-subtitle">Lorem, ipsum dolor</h3>
+                            <p class="section-text">Lorem ipsum dolor sit amet</p>
+                            <div class="section-city">
+                                <p class="section-place">Lorem</p>
+                                <p class="section-place">Lorem</p>
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- side bar -->
+            <aside class="sidebar">
+                <!-- side bar content -->
+                <div class="side-content">
+                    <!-- languages -->
+                    <div class="side-languages">
+                        <h2 class="section-title">Languages</h2>
+                        <ul class="side-languages-list">
+                            <li class="side-languages-item">
+                                <p class="side-languages-name">Ukrainian</p>
+                                <div class="side-languages-level">
+                                    <div class="languages-one"></div>
+                                    <div class="languages-one"></div>
+                                    <div class="languages-one"></div>
+                                    <div class="languages-one"></div>
+                                    <div class="languages-one"></div>
+                                </div>
+                            </li>
+                            <li class="side-languages-item">
+                                <p class="side-languages-name">English</p>
+                                <div class="side-languages-level">
+                                    <div class="languages-one"></div>
+                                    <div class="languages-one"></div>
+                                    <div class="languages-one"></div>
+                                    <div class="languages-zero"></div>
+                                    <div class="languages-zero"></div>
+                                </div>
+                            </li>
+                            <li class="side-languages-item">
+                                <p class="side-languages-name">German</p>
+                                <div class="side-languages-level">
+                                    <div class="languages-one"></div>
+                                    <div class="languages-one"></div>
+                                    <div class="languages-zero"></div>
+                                    <div class="languages-zero"></div>
+                                    <div class="languages-zero"></div>
+                                </div>
+                            </li>
+                            <li class="side-languages-item">
+                                <p class="side-languages-name">Japanese</p>
+                                <div class="side-languages-level">
+                                    <div class="languages-one"></div>
+                                    <div class="languages-one"></div>
+                                    <div class="languages-one"></div>
+                                    <div class="languages-one"></div>
+                                    <div class="languages-one"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- hard skills -->
+                    <div class="side-hard-skills">
+                        <h2 class="section-title">Hard skills</h2>
+                        <ul class="side-skills-list">
+                            <li class="side-hard-skills-item">Test</li>
+                            <li class="side-hard-skills-item">Test</li>
+                            <li class="side-hard-skills-item">Test</li>
+                            <li class="side-hard-skills-item">Test</li>
+                        </ul>
+                    </div>
+                    <!-- soft skills -->
+                    <div class="side-soft-skills">
+                        <h2 class="section-title">Soft skills</h2>
+                        <ul class="side-skills-list">
+                            <li class="side-soft-skills-item">Test</li>
+                            <li class="side-soft-skills-item">Test</li>
+                            <li class="side-soft-skills-item">Test</li>
+                            <li class="side-soft-skills-item">Test</li>
+                            <li class="side-soft-skills-item">Test</li>
+                            <li class="side-soft-skills-item">Test</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+    </div>
+</body>
+
+</html>
